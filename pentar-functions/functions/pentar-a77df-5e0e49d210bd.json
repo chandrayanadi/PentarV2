@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "pentar-a77df",
+  "private_key_id": "5e0e49d210bdb028fc627a1b0aeea4f7eb7f3663",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC0HayvNlhBiBl4\n9SnW1gcRDB+uUmhTkX57C+xohbtBQXckol7ExagFOCLGB5/HYSDYRAfogXd3Uykt\nJceMDPGOXoc4gE4isgIY6cTL0VPG1C/lhsqiqy7RqBLVFzsQMWi5wZJnlVuKubLp\n1S3kCoZWmqYfKB6r4hmarAUjIM14JMqhYfQhH/dQD+FQV0Z37URq+Hpp1xtKNcO9\nvLsaaid2QPykGkdFJkwFWd6GJrtkPOZhgYEdjaG4QpHp/ELmc20P+W1lJk+afRjm\nPqCYLXmsHquOIL9xL0Ra9NFzqIE58Tiw5zWbF9ZU8BXS6D6LtkepC+zECY/5cEbE\nomdwH5HjAgMBAAECggEAPFcqqGIw6/dP7U1Y0G/QWz4wCOLzr3dxI4DJmPSgWIq5\nguzgidRb5y+4upYISa+45KrZ6WMiJjgWddkPwlP9wr/ZVizpwEbZXAZI1y1P/y7L\nwv3GuftWSoefk4LeVxzuZDi8tvX6/n0auqqf3qNGARJ7L7ntmJC9Giuh5vRQ0XwV\nIr0MufI+woDMNwlOGeRawVlYXB8JPSWc7N53JCQYezcvnVWXDLdnDJs6gFWL+15P\n2qqr7MyjPaXfMKi6BBWZRCy3NL/an3SJDQXdEOVLKyxM1iuxoxRD7dNlGuSyqL69\n/dIa9r03mKBbr7HPIpkNT/EwpRVYxHm982H+4Tw2QQKBgQDv0un7MQOgN/PLf17n\neydfgs/MgUSJZZGq/rknaIW8eqWEqNtq+6JN33u2hiETTfgRKy2u+OVtAPo8EJoV\nV39BVoigIz56f4vFidG+o8VXt0fgg8XwBr/VGNgkHpybx9J3NCahXv8rDPUMyT8Y\ndY9bJiZ2apcqKrGx4K4Mydc7wQKBgQDAQ8V5/AWMZoumoQM5j/91JlQdtFfPq9Xg\nwth1VMXs+1fO14vVwoXp3wTKTM1jSFnLe3QAUqAr97hOxuvDaI/kIosqlAggS/EX\npNikkWFl9SX8xT1yZrMM8MS4l6UCHkZMOnJj0w+6UYlV40mz0fNpSNRrlwRvOCCA\nsad0JC4GowKBgFQkujeJ4O3L89vIWrH5Ab1/Fg14pWVXn55RNQFgqNuSZJSA8ks8\n8ptD+BH4SY6OYqUTczna1hRCrYl5gbZPNrTj+ZfGBdvQ+GdcjZzHtSurgKqDUWV/\n2LqZtuwlWWlG2M8+GvevbvPZ3fiYe2zHgn7GieQuTc9bn3D7ldWi08OBAoGAXNbc\n3qCBlWBXAukxA3SzKECP0aAp3s/dASFVIKMEyAA+UFTo4xmBTIMybvVTICPpqEY+\np4E+cry1tOR9J+ivwrujc7XzjpTdIEuriRviajdMVphvqXRJ9W+1rmUbesBftaNr\nZSSfrZp9tImCJ2C0JxzR5foQXBxAJaSjdYOa7f0CgYEAh/LsmDILqNg3z0KHjQdS\nSom9dL+np5JWuEPP04K8BDoLzJlmH+mjF8mfHTRph0YSqz7oda/GdTBohIvww0ED\niM9ReN+/hbdRnELK6KxPFdjpsVdDs/12g2bg9WBt0t4/eMwdDDVROvdJ0M3tg2VP\nyx5GE4F5ZJTBHvGv2hrLgUs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "pentar-a77df@appspot.gserviceaccount.com",
+  "client_id": "109137517877707275796",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pentar-a77df%40appspot.gserviceaccount.com"
+}
