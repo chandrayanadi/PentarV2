@@ -1,7 +1,7 @@
 const functions = require('firebase-functions');
 const app = require('express')();
 const { getAllStories, postOneStory} = require('./handlers/stories');
-const { signup, login } = require('./handlers/users');
+const { signup, login, uploadImage } = require('./handlers/users');
 const FBAuth = require('./util/fbAuth');
 
 //Stories routes
@@ -11,6 +11,7 @@ app.post('/addStory', FBAuth, postOneStory);
 //Users routes
 app.post('/signup', signup);
 app.post('/login', login);
+app.post('/user/image', FBAuth, uploadImage);
 
 //Using express to pass App as an argument for routing
 
