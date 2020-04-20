@@ -12,3 +12,26 @@ let db = {
         }
     ]
 }
+
+const userDetails = {
+    credentials :{
+        userId:"",
+        email:"",
+        handle:"",
+        createdAt:"",
+        location:"",
+        imageURL:"",
+        bio:"",
+        website:""
+    },
+    likes:[
+        {
+            userHandle:"",
+            storyID:"",
+        },
+        {
+            userHandle:"",
+            storyID:""
+        }
+    ]
+};

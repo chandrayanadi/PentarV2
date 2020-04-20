@@ -5,7 +5,7 @@ const config = require('../util/config');
 const firebase = require('firebase');
 firebase.initializeApp(config)
 
-const {validateSignupData, validateLoginData} = require('../util/validators');
+const {validateSignupData, validateLoginData, reduceUserDetails} = require('../util/validators');
 
 
 exports.signup = (request, response) => {
@@ -110,7 +110,7 @@ exports.uploadImage = (request, response) => {
         if(mimetype !== 'image/jpeg' && mimetype !== 'image/png'){
             return response.erros(500).json({error: "wrong file type submitted, submit a JPEG or a PNG file please"});
         }
-        
+
         console.log(fieldname);
         console.log(filename);
         console.log(mimetype);
@@ -144,4 +144,40 @@ exports.uploadImage = (request, response) => {
         })
     })
     busboy.end(request.rawBody);
+}
+
+exports.addUserDetails = (request, response) => {
+    let userDetails = reduceUserDetails(request.body);
+    db.doc(`/users/${request.user.handle}`).update(userDetails)
+    .then(()=>{
+        return response.status(200).json({message:"Details updated successfully"});
+    })
+    .catch(err => {
+        console.error(err);
+        return response.status(500).json({error: err.code});
+    })
+} 
+
+//Get user details post signin
+
+exports.getAuthenticatedUser = (request,response) => {
+    let userData = {};
+    db.doc(`/users/${request.user.handle}`).get()
+    .then(doc => {
+        if(doc.exists){
+            userData.credentials = doc.data();
+            return db.collection('likes').where('userHandle', '==', request.user.handle).get();
+        }
+    })
+    .then(data => {
+        userData.likes =[];
+        data.forEach(doc => {
+            userData.likes.push(doc.data());
+        });
+        return response.json(userData);
+    })
+    .catch(err => {
+        console.error(err);
+        return response.status(500).json({error: err.code})
+    })
 }
