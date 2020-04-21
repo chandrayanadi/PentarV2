@@ -1,12 +1,24 @@
 const functions = require('firebase-functions');
 const app = require('express')();
-const { getAllStories, postOneStory} = require('./handlers/stories');
+const { getAllStories, postOneStory, getOneStory, commentOnStory} = require('./handlers/stories');
 const { signup, login, uploadImage, addUserDetails, getAuthenticatedUser } = require('./handlers/users');
 const FBAuth = require('./util/fbAuth');
 
 //Stories routes
 app.get('/getStories', getAllStories);
 app.post('/addStory', FBAuth, postOneStory);
+app.get('/getStory/:storyId', getOneStory);
+
+//TODO: Like a story
+//TODO: Unlike a story
+//Comment on a story
+app.post('/getStory/:storyId/comment', FBAuth, commentOnStory);
+
+//TODO: Delete a story
+//TODO: Ask to contribute
+//TODO: See Variants
+//TODO: Make an E Book
+//TODO: Publish a story
 
 //Users routes
 app.post('/signup', signup);

@@ -8,7 +8,15 @@ let db = {
             commentCount: '100',
             contributionRequest: '13',
             publisherInterest: '1',
-            versions: '2'
+            variants: '2'
+        }
+    ],
+    comments:[
+        {
+            userHandle:"",
+            storyId:"",
+            body:"",
+            createdAt:""
         }
     ]
 }
