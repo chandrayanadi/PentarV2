@@ -174,10 +174,81 @@ exports.getAuthenticatedUser = (request,response) => {
         data.forEach(doc => {
             userData.likes.push(doc.data());
         });
+        return db.collection('notifications').where("recipient", '==', request.user.handle)
+        .orderBy('createdAt', 'desc').limit(10).get();
+    })
+    .then(data => {
+        userData.notifications = [];
+        data.forEach(doc => {
+            userData.notifications.push({
+                recipient :  doc.data().recipient,
+                sender :  doc.data().sender,
+                createdAt :  doc.data().createdAt,
+                type :  doc.data().type,
+                storyId :  doc.data().storyId,
+                read :  doc.data().read,
+                notificationId : doc.id
+            })
+        })
         return response.json(userData);
     })
     .catch(err => {
         console.error(err);
         return response.status(500).json({error: err.code})
+    })
+}
+
+//GetUserDetails
+
+exports.getUserDetails = (request, response) => {
+    let userData = {};
+    db.doc(`/users/${request.params.handle}`).get()
+    .then(doc => {
+        if(doc.exists){
+            userData.user = doc.data();
+            return db.collection('stories').where('handle', '==', request.params.handle )
+            .orderBy('createdAt', 'desc')
+            .get()
+        } else {
+            return response.status(404).json({error: "User not found"});
+        }
+    })
+    .then(data => {
+        userData.stories = [];
+        data.forEach(doc => {
+            userData.stories.push({
+                body: doc.data().body,
+                createdAt: doc.data().createdAt,
+                likeCount: doc.data().likeCount,
+                commentCount: doc.data().commentCount,
+                userImage: doc.data().userImage,
+                handle: doc.data().userHandle,
+                storyId: doc.id
+            })
+        })
+        return response.json(userData);
+    })
+    .catch(err => {
+        console.error(err);
+        return response.json(500).json({error: err.code});
+    })
+}
+
+
+//MarkNotificationsRead
+
+exports.markNotificationsRead = (request, response) => {
+    let batch = db.batch();
+    request.body.forEach(notificationId => {
+        const notification = db.doc(`/notifications/${notificationId}`);
+        batch.update(notification, { read: true});
+    })
+    batch.commit()
+    .then(()=>{
+        return response.json({message: "Notifications marked read"});
+    })
+    .catch(err => {
+        console.error(err);
+        return repsonse.status(500).json({error: err.code});
     })
 }
