@@ -94,7 +94,7 @@ exports.commentOnStory = (request, response) => {
     db.doc(`/stories/${request.params.storyId}`).get()
     .then((doc) => {
         if(!doc.exists){
-            return response.status(400).json({error: 'Story does not exist'});
+            return response.status(400).json({comment: 'Story does not exist'});
         }
         return doc.ref.update({commentCount: doc.data().commentCount + 1 });
     })
